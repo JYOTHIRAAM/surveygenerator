@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-padding: 70px 50px;
-background: #1b2430;
+padding: 10px 50px;
+background:#1b2430;
 position: absolute;
 bottom: 0;
 width: 100%;
-
-
+height:8%;
 @media (max-width: 1000px) {
 	padding: 70px 30px;
 }
@@ -17,7 +16,7 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	max-width: 1000px;
+	max-width: 100%;
 	margin: 0 auto;
 	/* background: red; */
 `
@@ -41,21 +40,14 @@ grid-gap: 20px;
 }
 `;
 
-export const FooterLink = styled.a`
-color: white;
-margin-bottom: 20px;
-font-size: 18px;
-text-decoration: none;
 
-&:hover {
-	color: green;
-	transition: 200ms ease-in;
-}
-`;
+
+
 
 export const Heading = styled.p`
-font-size: 24px;
+font-size: 17px;
 color: #fff;
-margin-bottom: 40px;
+margin-bottom: 10px;
 font-weight: bold;
+margin-top:30px;
 `;

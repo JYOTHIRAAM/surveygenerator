@@ -97,7 +97,7 @@ import React from 'react'
                 <p  style={{color:"red"}}>{formErrors.password}</p><br></br>
 
                 <div className='row1'>
-                    <button className='btn btn-primary'>CREATE</button>
+                    <button className='btn-btn-primary1'>CREATE</button>
                 </div>
             </form>
             </div>

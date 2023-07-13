@@ -78,7 +78,7 @@ function Login() {
             <p  style={{color:"red"}}>{formErrors.password}</p>
 
             <div className='row'>
-                <Link to="Home"><button className='btn btn-primary'>Login</button></Link>
+                <Link to="Home"><button className='btn-btn-primary'>Login</button></Link>
             </div>
             <br></br>
             <h2>.......or.......</h2>

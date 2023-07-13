@@ -51,7 +51,7 @@ input{
     font-family: cursive;
     color:black;
 }
-button{
+.btn-btn-primary1{
     border-radius: 10px;
     width: 75px;
     height: 30px;
@@ -60,7 +60,7 @@ button{
     color: rgb(49, 153, 243);
 
 }
-button:hover:not(.active){
+.btn-btn-primary1:hover:not(.active){
     border-radius: 10px;
     width: 75px;
     height: 30px;
