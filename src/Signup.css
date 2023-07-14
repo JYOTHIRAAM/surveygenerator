@@ -34,16 +34,15 @@
     font-family: cursive;
     position:relative;
 }
-.row{
+.row3{
     padding: 2%;
     color:black;
     font-size: larger;
     font-family: cursive;
     color: rgb(49, 153, 243);
 }
-input{
+.input2{
     background-color:transparent;
-    border:none;
     border-bottom: 2px solid black;;
     outline:none;
     width: 250px;

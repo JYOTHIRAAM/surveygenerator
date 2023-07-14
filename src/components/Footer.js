@@ -8,6 +8,7 @@ FooterLink,
 Heading,
 } from "./FooterStyles";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
 return (
@@ -20,25 +21,25 @@ return (
 	<Container>
 		<Row>
 		<Column>
-			<Heading>About Us</Heading>
+			<Link to={"AboutUs"}>
+				<Heading>About Us</Heading>
+			</Link>
 		</Column>
 		<Column>
 			<Heading>Services</Heading>
 		
 		</Column>
 		<Column>
-			<Heading>Contact Us</Heading>
-			
-
+			<Link to={"Contact"}><Heading>Contact Us</Heading></Link>
 		</Column>
 		<Column>
 			<Heading>Social</Heading>
 		</Column>
 		<div className="vertical"></div>
-		<column>
+		<Column>
 		<Heading>Follow us on : </Heading>
 		{/* <div className='payment'></div> */}
-		</column>
+		</Column>
 		<div className="gaja"><pre>
 			<img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="Lamp" width="32" height="32"></img>     <img src="https://cdn-icons-png.flaticon.com/128/3670/3670151.png" alt="Lamp" width="32" height="32"></img>     <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Lamp" width="32" height="32"></img>
 		</pre>

@@ -4,6 +4,7 @@ nav{
     justify-content: space-between;
     background-color: #1b2430;
     padding:20px 80px;
+    width:89.6%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
     height: 60px;
 }
@@ -49,4 +50,13 @@ nav{
     bottom: -4px;
     left: 20px;
 
+}
+.titl{
+    text-decoration: none;
+    padding: 2%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #17cf97;
+    transition: 0.3s ease-in-out;
+    bottom: -2px;
 }

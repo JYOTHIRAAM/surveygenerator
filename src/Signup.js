@@ -68,36 +68,36 @@ import React from 'react'
                 <br></br>
                 <h1>REGISTER</h1>
                 
-                <div className='row1'><br></br>
-                    <input type="text" id='firstname' placeholder='FirstName' value={formValues.firstname}
+                <div className='row3'><br></br>
+                    <input type="text" id='firstname' className='input2' placeholder='FirstName' value={formValues.firstname}
                         onChange={handleChange}/>
                 </div>
                 <p  style={{color:"red"}}>{formErrors.firstname}</p>
-                <div className='row1'><br></br>
-                    <input type="text" id='lastname' placeholder='LastName' value={formValues.lastname}
+                <div className='row3'><br></br>
+                    <input type="text" id='lastname' className='input2' placeholder='LastName' value={formValues.lastname}
                         onChange={handleChange}/>
                 </div>
                 <p  style={{color:"red"}}>{formErrors.lastname}</p>
 
-                <div className='row1'><br></br>
-                    <input type="email" id='email' placeholder='Email-id...' value={formValues.email}
+                <div className='row3'><br></br>
+                    <input type="email" id='email' className='input2' placeholder='Email-id...' value={formValues.email}
                         onChange={handleChange}/>
                 </div>
                 <p  style={{color:"red"}}>{formErrors.email}</p>
-                <div className='row1'><br></br>
-                    <input type="number" id='no' placeholder='MobileNumber' value={formValues.no}
+                <div className='row3'><br></br>
+                    <input type="tel" id='no' className='input2' placeholder='MobileNumber' value={formValues.no}
                         onChange={handleChange}/>
                 </div>
                 <p  style={{color:"red"}}>{formErrors.no}</p>
 
-                <div className='row1'><br></br>
-                    <input type="password" id='password' placeholder='Password' value={formValues.password}
+                <div className='row3'><br></br>
+                    <input type="password" id='password' className='input2' placeholder='Password' value={formValues.password}
                         onChange={handleChange}/>
                 </div>
                 <p  style={{color:"red"}}>{formErrors.password}</p><br></br>
 
-                <div className='row1'>
-                    <button className='btn-btn-primary1'>CREATE</button>
+                <div className='row3'>
+                    <button type='submit' className='btn-btn-primary1'>CREATE</button>
                 </div>
             </form>
             </div>

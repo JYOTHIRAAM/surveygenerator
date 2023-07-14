@@ -3,11 +3,14 @@ import Navbar from './Navbar'
 import Footer from './components/Footer'
 import {FaBars, FaFilter} from 'react-icons/fa'
 import './Home.css'
+import { Link } from 'react-router-dom'
 export class Home extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
+        <div className='navbd'>
+          <Navbar/>
+        </div>
         <div className="whole-page">
           <div className="left-section">
             <div className='side'>
@@ -21,12 +24,14 @@ export class Home extends Component {
           <div className="right-section">
             <div className='my'>
               <div className='my1'><FaBars size={30}/>&nbsp;&nbsp;&nbsp;<FaFilter size={30}/></div>
-              <div className='my2'><button className='butt'>Create Survey</button></div>
+              <div className='my2'><Link to={"Survey"}><button className='butt'>Create Survey</button></Link></div>
             </div>
             <div className='image1'><img src="https://img.freepik.com/free-vector/feedback-survey-concept-illustration_114360-15500.jpg?w=2000" width="110%" height="350px" alt=""></img> </div>
           </div>
-        </div> 
-        <Footer/>
+        </div>
+        <div className='footd'>
+          <Footer/>
+          </div> 
       </div>
     )
   }

@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
+position:fixed;
 padding: 10px 50px;
 background:#1b2430;
-position: absolute;
-bottom: 0;
 width: 100%;
-height:8%;
 @media (max-width: 1000px) {
-	padding: 70px 30px;
+	padding: 60px 30px;
 }
 `;
 
 export const Container = styled.div`
+	height:30%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -41,13 +40,14 @@ grid-gap: 20px;
 `;
 
 
-
-
-
 export const Heading = styled.p`
 font-size: 17px;
 color: #fff;
 margin-bottom: 10px;
 font-weight: bold;
-margin-top:30px;
+
+&:hover {
+	color: #17cf97;
+	transition: 200ms ease-in;
+}
 `;

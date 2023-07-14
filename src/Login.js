@@ -60,19 +60,19 @@ function Login() {
             <h1>Login</h1>
             
             <div className='row'><br></br>
-                <input type="text" id='username' placeholder='Username' required value={formValues.username}
+                <input type="text" id='username' className='input1' placeholder='Username' required value={formValues.username}
                     onChange={handleChange}/>
             </div>
             <p  style={{color:"red"}}>{formErrors.username}</p>
 
             <div className='row'><br></br>
-                <input type="email" id='email' required placeholder='Email-id' value={formValues.email}
+                <input type="email" id='email' className='input1' required placeholder='Email-id' value={formValues.email}
                     onChange={handleChange}/>
             </div>
             <p  style={{color:"red"}}>{formErrors.email}</p>
 
             <div className='row'><br></br>
-                <input type="password" id='password' required placeholder='Password' value={formValues.password}
+                <input type="password" id='password' className='input1' required placeholder='Password' value={formValues.password}
                     onChange={handleChange}/>
             </div>
             <p  style={{color:"red"}}>{formErrors.password}</p>

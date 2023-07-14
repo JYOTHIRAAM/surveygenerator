@@ -1,35 +1,28 @@
 import React from 'react'
-import './Navbar.css'
+import './AboutUs.css'
 import survey from './logo.png';
-import { AppBar, Avatar, IconButton,Box,Tooltip,Menu,TextField, InputBase,Button, MenuList,MenuItem,Divider,ListItemIcon} from '@mui/material'
-import Typography from '@mui/material/Typography';
-import {Logout,Settings,PersonAdd} from '@mui/icons-material';
+import {  Avatar, IconButton,Box,Menu,MenuItem,Divider,ListItemIcon} from '@mui/material'
+import {Logout,Settings} from '@mui/icons-material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import {Link} from "react-router-dom"
+import Copyright from './Copyright';
 
-
-function Navbar() {
-  
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+function AboutUs() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
   return (
-    <>
-        <nav>
+    <div>
+        <nav className='a5'>
             <img src={survey} height="60" width="90" alt=""></img>
-            <p className='titl'>SURVEY+</p>
-
-            <div>
                 <ul id="navbar">
-                  <center>
-                  </center>
-                    <li><a className="active" href="index.html">Home</a></li>
+                    <li><a className="active" href="/Home/AboutUs">About</a></li>
                      <Box sx={{ flexGrow: 0 }}>
                      <li>
                       <IconButton
@@ -103,10 +96,35 @@ function Navbar() {
           <div className='logout'>Logout</div></Link>
         </MenuItem>
       </Menu>
-            </div>
         </nav>
-    </>
+        <div id='desktop-2' className='desktop-2'>
+<div id='rectangle3' className='rectangle3'>
+</div>
+<div className='jyothiraam'>
+Name: Jyothiraam S R   <br/>
+Email: raamsr@gmail.com
+</div>
+<div i className='indhuprakash'>
+Name: Indhuprakash T M<br/>
+Email: indhuprakash@gmail.com
+</div>
+<div id='aboutus' className='aboutus'>
+ABOUT US</div>
+<div  className='content'>
+Survey+
+is an Survey and marketing automations platform for growing businesses. We empower millions of customers around the world to start and grow their businesses with world-class marketing technology, award-winning customer support, and inspiring content. Survey+ puts data-backed recommendations at the heart of your marketing and surveys, so you can find and engage customers across email, social media, landing pages, and advertising—automatically and with the power of AI.</div>
+<div id='creaters:' className='creaters'>
+CREATERS:</div>
+<div id='name:imayeshmemail:abc@gmail.comlinkedin:instagram:' className='imayesh'>
+Name: Imayesh M<br/>
+Email: imayesh@gmail.com</div>
+</div >
+<div className='cpy'>
+
+<Copyright/>
+</div>
+</div>
   )
 }
 
-export default Navbar
+export default AboutUs

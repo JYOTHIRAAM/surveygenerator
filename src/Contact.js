@@ -1,17 +1,16 @@
 import React from 'react'
-import './Navbar.css'
+import './Contact.css'
 import survey from './logo.png';
-import { AppBar, Avatar, IconButton,Box,Tooltip,Menu,TextField, InputBase,Button, MenuList,MenuItem,Divider,ListItemIcon} from '@mui/material'
-import Typography from '@mui/material/Typography';
-import {Logout,Settings,PersonAdd} from '@mui/icons-material';
+import './Navbar.css'
+import {  Avatar, IconButton,Box,Menu,MenuItem,Divider,ListItemIcon, colors} from '@mui/material'
+import {Logout,Settings} from '@mui/icons-material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import {Link} from "react-router-dom"
-
-
-function Navbar() {
+import Copyright from './Copyright';
+function Contact() {
   
-  const [anchorEl, setAnchorEl] = React.useState(null);
+        const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -21,15 +20,11 @@ function Navbar() {
   };
   return (
     <>
-        <nav>
+    <div>
+        <nav className='a5'>
             <img src={survey} height="60" width="90" alt=""></img>
-            <p className='titl'>SURVEY+</p>
-
-            <div>
                 <ul id="navbar">
-                  <center>
-                  </center>
-                    <li><a className="active" href="index.html">Home</a></li>
+                     <li><a className='active' href="/Home/Contact">Contact</a></li>
                      <Box sx={{ flexGrow: 0 }}>
                      <li>
                       <IconButton
@@ -103,10 +98,28 @@ function Navbar() {
           <div className='logout'>Logout</div></Link>
         </MenuItem>
       </Menu>
-            </div>
         </nav>
+        </div>
+    <div className='first'><h1>Get in touch with us</h1></div>
+    <div className='second'><h2>Need help on something? Get in touch with us through the correct channels</h2>
+    <h2> below and we will get back to you as soon as possible</h2></div>
+    <div style={{display:'flex'}}>
+    <div className='box1'>
+        <h1 className='hd1'>Contact Support Team</h1>
+        <p style={{fontSize:"14px"}}>Contact our Support Team for your questions and requests. We will reply as soon as possible to help you with care. </p><br/><br/>
+        <a href="https://www.gmail.com/"><button className='cs'>Contact Support</button></a>
+    </div>
+    <div className='box2'>
+    <h1 className='hd1'>Report Abuse</h1>
+        <p style={{fontSize:"14px"}}>Encountered a malicious form that was created on forms.app? Share it with us and we will take action as soon as possible. We evaluate all the requests but may not be able to respond to all.</p><br/><br/>
+        <button className='cs'>Report Abuse</button>
+    </div>
+    </div>
+    <div>
+    <Copyright/>
+    </div>
     </>
   )
 }
 
-export default Navbar
+export default Contact
