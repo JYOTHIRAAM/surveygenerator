@@ -42,13 +42,11 @@
     color: rgb(49, 153, 243);
 }
 .input2{
-    background-color:transparent;
-    border-bottom: 2px solid black;;
-    outline:none;
+    border-color: rgb(242, 106, 201);
     width: 250px;
     height: 30px;
     font-family: cursive;
-    color:black;
+    color:rgb(78, 96, 227);
 }
 .btn-btn-primary1{
     border-radius: 10px;

@@ -2,7 +2,7 @@ nav{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1b2430;
+    background-color: #363636;
     padding:20px 80px;
     width:89.6%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
@@ -37,7 +37,7 @@ nav{
 
 #navbar li a:hover,
 #navbar li a.active{
-    color: #17cf97;
+    color: white;
 }
 
 #navbar li a:hover::after,
@@ -45,7 +45,7 @@ nav{
     content: "";
     width: 60%;
     height: 2px;
-    background: #17cf97;
+    background: #e8175d;
     position: absolute;
     bottom: -4px;
     left: 20px;
@@ -56,7 +56,7 @@ nav{
     padding: 2%;
     font-size: 1.3rem;
     font-weight: 700;
-    color: #17cf97;
+    color: white;
     transition: 0.3s ease-in-out;
     bottom: -2px;
 }

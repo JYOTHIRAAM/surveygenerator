@@ -1,5 +1,5 @@
 .first{
-    color: #3ce3b1;
+    color: #e8175d;
     text-align: center;
     font-size: 25px;
 }
@@ -13,16 +13,21 @@
     width:35%;
     height:300px;
     margin-left: 150px;
-    color: aliceblue;
+    color: white;
     margin-top: 65px;
     text-align: center;
-    background-color: #1b2430;
+    background-color: #363636;
     border-radius: 7px;
 }
-
+.bd{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+}
 .cs{
     border:2px solid black;
-    background-color: #3ce3b1;  
+    background-color: #e8175d;  
     border-radius: 7px;
     width:180px;
     height:50px;
@@ -30,16 +35,16 @@
 }
 
 .box2{
-    width:35.5%;
+    width:36.5%;
     height:300px;
     margin-left: 150px;
     margin-top: 65px;
     text-align: center;
-    color: aliceblue;
-    background-color: #1b2430;
+    color: white;
+    background-color: #363636;
     border-radius: 7px;
 
 }
 .hd1{
-    color: #3ce3b1;
+    color: white;
 }

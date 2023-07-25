@@ -4,9 +4,8 @@ import './Login.css'
 import { Link,useNavigate } from 'react-router-dom';
 import { login } from './userSlice';
 import { useDispatch } from "react-redux";
-import axios from 'axios'
 import { Button, createTheme } from '@mui/material';
-function Login() {
+function User() {
     const initValues={email:'',password:''}
     const [username,setUsername]=useState("");
     const [formValues,setFormValues]=useState(initValues);
@@ -19,7 +18,7 @@ function Login() {
         console.log(formValues);
     }
     const dispatch=useDispatch();
-    const handleSubmit=async(event)=>{
+    const handleSubmit=(event)=>{
         event.preventDefault();
         dispatch(
             login(
@@ -28,19 +27,9 @@ function Login() {
                 }
             )
         )
-        try{
-            const response=await axios.post('http://localhost:8081/api/v1/auth/authenticate',{
-                "name":username,
-                "password":formValues.password
-            });
-            navigate('/Home');
-            let token=response.data.token;
-            let user=response.data.id;
-            localStorage.setItem('token',token);
-            localStorage.setItem('user',JSON.stringify(user));
-        }catch(error){
-            console.error('Error: ',error);
-        }
+        setFormErrors(validate(formValues));
+        setIsSubmit(true);
+        navigate("/Home")
     }
     const validate=(values)=>{
         const errors={};
@@ -80,16 +69,14 @@ function Login() {
         <form  onSubmit={handleSubmit}>
             <br></br>
             <br></br>
-            <h1>Admin Login</h1>
+            <h1>User Login</h1>
+            <pre><Link to="/"><Button style={{  color: 'rgb(13, 124, 221)' }} >ADMIN</Button></Link>   <Button variant='contained' style={{ color: '#FFFFFF',backgroundColor: 'rgb(107, 178, 240', }}>USER</Button></pre>
             <div className='row'><br></br>
                 <input type="text" id='username' className='input1' placeholder='Username' required value={formValues.username}
                     onChange={(event)=> setUsername(event.target.value)}/>
             </div>
             <p  style={{color:"red"}}>{formErrors.username}</p>
-            <div className='row'><br></br>
-                <input type="email" id='email' className='input1' required placeholder='email' value={formValues.email}
-                    onChange={handleChange}/>
-            </div>
+
             <p  style={{color:"red"}}>{formErrors.email}</p>
 
             <div className='row'><br></br>
@@ -113,4 +100,4 @@ function Login() {
      );
 }
 
-export default Login
+export default User

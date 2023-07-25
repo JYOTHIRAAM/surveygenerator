@@ -7,7 +7,8 @@ import {Logout,Settings,PersonAdd} from '@mui/icons-material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import {Link} from "react-router-dom"
-
+import { useDispatch,useSelector } from "react-redux";
+import { logout,selectUser } from "./userSlice";
 
 function Navbar() {
   
@@ -18,6 +19,12 @@ function Navbar() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout());
   };
   return (
     <>
@@ -75,7 +82,7 @@ function Navbar() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> My account
+          <Avatar /> {user.name}
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>

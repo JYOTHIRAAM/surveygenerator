@@ -1,18 +1,15 @@
-import React from 'react'
-import './Contact.css'
+import React from "react";
 import survey from './logo.png';
-import './Navbar.css'
-import {  Avatar, IconButton,Box,Menu,MenuItem,Divider,ListItemIcon, colors} from '@mui/material'
+import {Avatar, IconButton,Box,Menu,MenuItem,Divider,ListItemIcon} from '@mui/material'
 import {Logout,Settings} from '@mui/icons-material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import { RWebShare } from "react-web-share";
 import {Link} from "react-router-dom"
-import Copyright from './Copyright';
+import './Share.css'
 import { useDispatch,useSelector } from "react-redux";
 import { logout,selectUser } from "./userSlice";
-function Contact() {
-  
-        const [anchorEl, setAnchorEl] = React.useState(null);
+
+export default function Share() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -26,14 +23,17 @@ function Contact() {
     e.preventDefault();
     dispatch(logout());
   };
-  return (
-    <>
-
-    <div>
-        <nav className='a5'>
+	return (
+		<div>
+            <nav className='a5'>
             <img src={survey} height="60" width="90" alt=""></img>
                 <ul id="navbar">
-                     <li><a className='active' href="/Home/Contact">Contact</a></li>
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/SurveyForm">Survey</a></li>
+                    <li><a className="active" href="/Share">Share</a></li>
+                    <li><a href="/Analysis">Analysis</a></li>
+                    <li><a href="/About">About</a></li>
+                     <li><a href="/Contact">Contact</a></li>
                      <Box sx={{ flexGrow: 0 }}>
                      <li>
                       <IconButton
@@ -82,18 +82,7 @@ function Contact() {
           <Avatar /> {user.name}
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
-          <FavoriteIcon>
-            <Settings fontSize="small" />
-          </FavoriteIcon>
-          &nbsp;&nbsp;&nbsp;Favorites
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <BookmarkBorderIcon>
-            <Settings fontSize="small" />
-          </BookmarkBorderIcon>
-          &nbsp;&nbsp;&nbsp;Favorites
-        </MenuItem>
+        
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <Settings fontSize="small" />
@@ -108,29 +97,19 @@ function Contact() {
         </MenuItem>
       </Menu>
         </nav>
-        </div>
-    <div className='bd'>
-    <div className='first'><h1>Get in touch with us</h1></div>
-    <div className='second'><h2>Need help on something? Get in touch with us through the correct channels</h2>
-    <h2> below and we will get back to you as soon as possible</h2></div>
-    <div style={{display:'flex'}}>
-    <div className='box1'>
-        <h1 className='hd1'>Contact Support Team</h1>
-        <p style={{fontSize:"14px"}}>Contact our Support Team for your questions and requests. We will reply as soon as possible to help you with care. </p><br/><br/>
-        <a href="https://www.gmail.com/"><button className='cs'>Contact Support</button></a>
-    </div>
-    <div className='box2'>
-      <h1 className='hd1'>Report Abuse</h1>
-        <p style={{fontSize:"14px"}}>Encountered a malicious form that was created on forms.app? Share it with us and we will take action as soon as possible. We evaluate all the requests but may not be able to respond to all.</p><br/><br/>
-        <button className='cs'>Report Abuse</button>
-    </div>
-    </div>
-    <div>
-    <Copyright/>
-    </div>
-        </div>
-    </>
-  )
-}
-
-export default Contact
+        <div className="pic3"><img src="https://www.omniconvert.com/wp-content/uploads/2019/10/new-hero-ab-testing-copy-med.png" height="500" width="500" alt=""></img></div>
+        <div className="web">
+          <p className="quote"><center><i><b>Customer service shouldn’t just be a<br/>department, it should be the entire<br/>company.</b></i><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Tony Hsieh</center></p>
+			<br/><h1 className="h11">Here is your Survey Link !!!</h1>
+			<div className="h12"><RWebShare className="h12"
+				data={{
+					url: "http://localhost:3000/Responce",
+					title: "Get Your Survey Link",
+				}}
+				onClick={() => window.alert("Shared Successfully!!!")}
+			>
+				<button className="h13">Share on Web</button>
+			</RWebShare></div></div>
+		</div>
+	);
+};

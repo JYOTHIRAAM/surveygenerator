@@ -10,7 +10,7 @@ import survey from './logo.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class Survey extends Component{
+class Responce extends Component{
 
 
     constructor(props){
@@ -337,11 +337,11 @@ class Survey extends Component{
                         onChange={this.handleQelevenChange}/>
                 </div>
     
-                {/* <div className='row1'>
-                   <center><Link to={"Share"}> <button className='btnr'>Submit</button></Link></center>
-                </div> */}
+                <div className='row1'>
+                   <center><button className='btnr'>Submit</button></center>
+                </div>
             </form>
-            <div className='row8'><Link to={"Share"}><button className='btnr'>GENERATE LINK</button></Link></div>
+            {/* <div className='row8'><Link to={"Share"}><button className='btnr'>GENERATE LINK</button></Link></div> */}
             </div>
             </div>
             </body>
@@ -349,4 +349,4 @@ class Survey extends Component{
     }
 }
 
-export default Survey
+export default Responce

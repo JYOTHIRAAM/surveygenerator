@@ -15,11 +15,11 @@
 }
 
 .contain{
-  background-color: #1b2430;
-  width: 700px;
+  background-color: #363636;
+  width: 800px;
   height: 1900px;
   left: 450px;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   position:absolute;
 }
@@ -30,7 +30,7 @@
   margin-top: 20px;
   width: 500px;
   padding: 1%;
-  color: #3ce3b1;
+  color: #e8175d;
   font-family: Ruslan Display;
   position:absolute;
 }
@@ -44,22 +44,31 @@
   font-family: Recursive;
   color: white;
 }
+.row8{
+  margin-left: 270px;
+  padding: 2%;
+  color:white;
+  font-size: larger;
+  text-align: left;
+  font-family: Recursive;
+  color: white;
+}
 input{
   background-color:transparent;
   border:none;
-  border-bottom: 2px solid #3ce3b1;
+  border-bottom: 2px solid #e8175d;
   width: 250px;
   height: 30px;
-  color: #3ce3b1;
+  color: #e8175d;
   font-family: Recursive;
 }
 .btnr{
   border-radius: 10px;
-  width: 170px;
-  height: 40px;
+  width: 180px;
+  height: 50px;
   font-family: Recursive;
   font-size: 20px;
-  background-color: #3ce3b1;
+  background-color: #e8175d;
 
 }
 
@@ -77,7 +86,7 @@ input{
  align-items: center;
  min-height: 10vh;
  font-size: 60px;
- color: #3ce3b1;
+ color: #e8175d;
 }
 
 .Radio{
@@ -86,7 +95,7 @@ input{
 
 .Rating{
   cursor: pointer;
-  color: #3ce3b1;
+  color: #e8175d;
 }
 
 .pic{
@@ -99,7 +108,7 @@ select{
   width: 300px;
   border-radius: 5px;
   color: #1b2430;
-  background-color: #3ce3b1;
+  background-color: #e8175d;
   justify-content: center;
   align-items: center;
 }
