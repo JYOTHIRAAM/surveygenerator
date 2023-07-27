@@ -28,12 +28,7 @@ export default function Share() {
             <nav className='a5'>
             <img src={survey} height="60" width="90" alt=""></img>
                 <ul id="navbar">
-                    <li><a href="/Home">Home</a></li>
-                    <li><a href="/SurveyForm">Survey</a></li>
                     <li><a className="active" href="/Share">Share</a></li>
-                    <li><a href="/Analysis">Analysis</a></li>
-                    <li><a href="/About">About</a></li>
-                     <li><a href="/Contact">Contact</a></li>
                      <Box sx={{ flexGrow: 0 }}>
                      <li>
                       <IconButton
@@ -82,13 +77,6 @@ export default function Share() {
           <Avatar /> {user.name}
         </MenuItem>
         <Divider />
-        
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <Logout fontSize="small" />

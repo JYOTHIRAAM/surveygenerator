@@ -4,55 +4,101 @@ import React from 'react'
     import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
     function Signup() {
-        const initValues={name:'',email:'',mobile:'',password:''}
-        const [formValues,setFormValues]=useState(initValues);
-        const [formErrors,setFormErrors]=useState({});
-        const [isSubmit,setIsSubmit]=useState(false);
-
-        const handleChange=(event)=>{
-            const{id,value}=event.target;
-            setFormValues({...formValues,[id]:value});
-            console.log(formValues);
-        }
+        const [name, setName] = useState('');
+        const [email, setEmail] = useState('');
+        const [password, setPassword] = useState('');
+        const [confirmpassword, setConfirmPassword] = useState('');
+        const [mobile, setMobile] = useState('');
+        // const [registrationError,setRegistrationError] = useState('');
         const navigate=useNavigate();
-        const handleSubmit=(event)=>{
-            event.preventDefault();
-            setFormErrors(validate(formValues));
-            setIsSubmit(true);
-            axios.post('http://localhost:8081/api/v1/auth/register',formValues)
+    
+        const checkPassword = (e) =>{
+          const mobileRegex=/^\d{10}$/;
+          const passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+          if(!mobileRegex.test(mobile)){
+            window.alert(
+              "Mobile number must contain 10 Numbers."
+            );
+            initialize3()
+            return;
+          }
+          else if (!passwordRegex.test(password)) {
+            window.alert(
+              "Password should contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character."
+            );
+            initialize1()
+            return;
+          }
+          else if (password !== confirmpassword) {
+            window.alert("Passwords do not match.");
+            initialize2()
+            return;
+          }
+          else{
+            window.alert("Registration Successful !!!");
+          }
+        }
+        const initialize1 = () =>{
+          setPassword('')
+          setConfirmPassword('')
+        }
+        const initialize2 = () =>{
+          setConfirmPassword('')
+        }
+        const initialize3 = () =>{
+          setMobile('')
+        }
+      
+        const handleNameChange = (event) => {
+            setName(event.target.value);
+          };
+        const handleEmailChange = (event) => {
+          setEmail(event.target.value);
+        };
+      
+        const handlePasswordChange = (event) => {
+          setPassword(event.target.value);
+        };
+        
+        const handleConfirmPasswordChange = (event) => {
+          setConfirmPassword(event.target.value);
+        };
+    
+        const handleMobileChange = (event) => {
+          setMobile(event.target.value);
+        };
+    
+        const handleSubmit= async (e)=>{
+          e.preventDefault();
+          try {
+            const response = await axios.post(
+              "http://localhost:8081/api/v1/auth/register",
+              {
+                name,
+                email,
+                mobile,
+                password,
+                // confirmpassword,
+              },
+            );
+      
+            console.log("Sign in successful");
+            console.log(response.data); 
             navigate("/");
+      
+            setName("");
+            setEmail("");
+            setMobile("");
+            setPassword("");
+            // setRegistrationError("");
+          } catch (error) {
+            console.error("Registration failed");
+            console.error(error); 
+      
+          }
         }
-        const validate=(values)=>{
-            const errors={};
-            const reg=new RegExp("[0-9]")
-            const preg=new RegExp("[A-Z][A-za-z0-9$_]+") 
-
-            if(!values.name)
-            errors.name="Firstname is Required";
-            else if(values.name.length<5)
-            errors.name="Firstname must have minimum 5 characters";
-            else if(reg.test(values.name))
-            errors.name="Firstname must contain only alphabets";
-            
-            if(!values.email)
-            errors.email="Email-Id is Required";
-
-            if(!values.mobile)
-            errors.mobile="MobileNumber is Required";
-            else if(preg.test(values.mobile))
-            errors.mobile="Mobile Number must contain only numbers";
-            
-            if(!values.password)
-            errors.password="Password is Required";
-            else if(values.password.length<5)
-            errors.name="password must have minimum 5 characters";
-            else if(!preg.test(values.password))
-            errors.password="Password must contain Special Characters, a-z, A-Z, Numbers";
-            return errors;
-        }
-
         return ( 
-            <body className='top'>
+            <div className='top'>
                 <br></br>
                 <br></br>
             <div className='topic'>
@@ -69,34 +115,34 @@ import { useNavigate } from 'react-router-dom';
                 <h1>REGISTER</h1>
                 
                 <div className='row3'><br></br>
-                    <input type="text" id='name' required className='input2' placeholder='UserName' value={formValues.name}
-                        onChange={handleChange}/>
+                    <input type="text" id='name' required className='input2' placeholder='UserName' value={name}
+                        onChange={handleNameChange}/>
                 </div>
-                <p  style={{color:"red"}}>{formErrors.username}</p>
 
                 <div className='row3'><br></br>
-                    <input type="email" id='email' required className='input2' placeholder='Email-id...' value={formValues.email}
-                        onChange={handleChange}/>
+                    <input type="email" id='email' required className='input2' placeholder='Email-id...' value={email}
+                        onChange={handleEmailChange}/>
                 </div>
-                <p  style={{color:"red"}}>{formErrors.email}</p>
                 <div className='row3'><br></br>
-                    <input type="tel" id='mobile' required className='input2' placeholder='MobileNumber' value={formValues.mobile}
-                        onChange={handleChange}/>
+                    <input type="tel" id='mobile' required className='input2' placeholder='MobileNumber' value={mobile}
+                        onChange={handleMobileChange}/>
                 </div>
-                <p  style={{color:"red"}}>{formErrors.mobile}</p>
 
                 <div className='row3'><br></br>
-                    <input type="password" id='password' required className='input2' placeholder='Password' value={formValues.password}
-                        onChange={handleChange}/>
+                    <input type="password" id='password' required className='input2' placeholder='Password' value={password}
+                        onChange={handlePasswordChange}/>
                 </div>
-                <p  style={{color:"red"}}>{formErrors.password}</p><br></br>
+                <div className='row3'><br></br>
+                    <input type="password" id='confirmpassword' required className='input2' placeholder='Confirm Password' value={confirmpassword}
+                        onChange={handleConfirmPasswordChange}/>
+                </div>
 
                 <div className='row3'>
-                    <button className='btn-btn-primary1'>CREATE</button>
+                    <button type="submit" onClick={checkPassword} className='btn-btn-primary1'>CREATE</button>
                 </div>
             </form>
             </div>
-            </body>
+            </div>
         );
     }
 

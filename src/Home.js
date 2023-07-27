@@ -41,13 +41,12 @@ function Home()  {
           </div>
           <div className='content1'>
               <h1 className='ho'>
-                HELLO {user.name}..........!!
+                Hello {user.name}...!!
               </h1>
               <p className='hop'>
               Ask the right questions with interactive surveys that engage users and boost completion rates. 
               Once you’ve built a custom survey or questionnaire and collected your responses, 
-              you can easily track and analyze your su
-              rvey data with survey+’s real-time reporting and data analysis tools.
+              you can easily track and analyze your survey data with survey+’s real-time reporting and data analysis tools.
               </p>
         </div>
       </div>

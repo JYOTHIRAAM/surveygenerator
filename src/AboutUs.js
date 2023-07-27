@@ -79,24 +79,6 @@ function AboutUs() {
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>
-          <FavoriteIcon>
-            <Settings fontSize="small" />
-          </FavoriteIcon>
-          &nbsp;&nbsp;&nbsp;Favorites
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <BookmarkBorderIcon>
-            <Settings fontSize="small" />
-          </BookmarkBorderIcon>
-          &nbsp;&nbsp;&nbsp;Favorites
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon><Link to="/">

@@ -66,7 +66,7 @@ function Login() {
 
 
     return ( 
-        <body className='top1'>
+        <div className='top1'>
             <br></br>
             <br></br>
         <div className='topic1'>
@@ -105,11 +105,11 @@ function Login() {
             <h2>.......or.......</h2>
             <br></br>
             <div>
-            <Link to="Signup"><a href='#'></a>SIGNUP</Link>
+            <Link to="Signup">SIGNUP</Link>
             </div>
         </form>
         </div>
-        </body>
+        </div>
      );
 }
 

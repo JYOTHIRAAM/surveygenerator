@@ -183,7 +183,7 @@ class Responce extends Component{
                             <FaStar size={30}
                                 color={
                                     givenRating-1 < this.state.qthree || givenRating-1 === this.state.qthree 
-                                    ? "#3ce3b1"
+                                    ? "#e8175d"
                                     : "rgb(192,192,192)"
                                   }
                                   />
@@ -296,7 +296,7 @@ class Responce extends Component{
                     <label for="q1">Satisfactory</label><br></br>
                     <input type="radio" name="unii" className="check" id="q1"  value={this.setState.qnine="Good"} onChange={this.handleQnineChange} required/>
                     <label for="q1">Good</label><br></br>
-                    <input type="radio" name="uni" className="check" id="q1"  value={this.setState.qnine="Excellent"} onChange={this.handleQnineChange} required/>
+                    <input type="radio" name="unii" className="check" id="q1"  value={this.setState.qnine="Excellent"} onChange={this.handleQnineChange} required/>
                     <label for="q1">Excellent</label><br></br>
                 </div>
 

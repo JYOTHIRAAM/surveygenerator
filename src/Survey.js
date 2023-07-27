@@ -183,7 +183,7 @@ class Survey extends Component{
                             <FaStar size={30}
                                 color={
                                     givenRating-1 < this.state.qthree || givenRating-1 === this.state.qthree 
-                                    ? "#3ce3b1"
+                                    ? "#e8175d"
                                     : "rgb(192,192,192)"
                                   }
                                   />
